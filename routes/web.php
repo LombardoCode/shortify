@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UrlController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('inicio');
+});
+
+// API
+Route::prefix('api')->group(function() {
+  Route::prefix('url')->group(function() {
+    Route::post('/', [UrlController::class, 'store']);
+  });
 });

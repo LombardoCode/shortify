@@ -12133,7 +12133,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      datos_url: {
+        url_original: '',
+        url_corta: '',
+        url_corta_completa: ''
+      }
+    };
+  },
+  methods: {
+    crearURL: function crearURL() {
+      var _this = this;
+
+      axios.post('/api/url', this.datos_url).then(function (res) {
+        console.log(res.data);
+
+        if (res.data.success) {
+          _this.datos_url.url_corta = res.data.url_corta;
+          _this.datos_url.url_corta_completa = window.location.href + '/' + res.data.url_corta;
+        }
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -48316,52 +48351,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mx-auto px-3 mt-4" }, [
+  return _c("div", { staticClass: "container mx-auto px-3 mt-4" }, [
+    _c("div", { staticClass: "fnt-quicksand w-full lg:w-3/4 mx-auto" }, [
+      _vm.datos_url.url_corta
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "bg-green-600 text-white px-4 py-3 mb-2 rounded-md overflow-hidden"
+            },
+            [
+              _c("p", { staticClass: "text-center" }, [
+                _vm._v("¡El URL ha sido generado!")
+              ]),
+              _vm._v(" "),
+              _vm.datos_url.url_corta_completa
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "block text-center text-xl mt-3 underline",
+                      attrs: { href: _vm.datos_url.url_corta_completa }
+                    },
+                    [_vm._v(_vm._s(_vm.datos_url.url_corta_completa))]
+                  )
+                : _vm._e()
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass:
-            "bg-white rounded-md overflow-hidden fnt-quicksand py-2 w-full lg:w-3/4 mx-auto"
-        },
+        { staticClass: "bg-white px-3 py-4 rounded-md overflow-hidden" },
         [
-          _c("div", { staticClass: "px-3 py-4" }, [
-            _c("p", { staticClass: "text-center text-xl font-bold" }, [
-              _vm._v("Ingrese el URL a acortar")
-            ])
+          _c("p", { staticClass: "text-center text-xl font-bold py-2" }, [
+            _vm._v("Ingrese el URL a acortar")
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "px-4 pt-2 pb-4" }, [
-            _c("div", { staticClass: "xl:flex" }, [
-              _c("input", {
-                staticClass:
-                  "w-full xl:w-auto xl:flex-1 px-3 py-2 xl:mr-3 rounded-md border-2 border-gray-400 focus:border-blue-500 outline-none",
-                attrs: {
-                  type: "text",
-                  name: "url",
-                  id: "url",
-                  placeholder: "Ingrese la URL a acortar"
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.crearURL()
+                  }
                 }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                staticClass:
-                  "w-full xl:w-auto px-3 py-5 xl:py-2 mt-4 xl:mt-0 rounded-md transition-all duration-200 bg-blue-900 hover:bg-blue-1000 cursor-pointer text-white text-lg",
-                attrs: { type: "submit", value: "Acortar" }
-              })
-            ])
+              },
+              [
+                _c("input", {
+                  attrs: { type: "hidden", name: "_token" },
+                  domProps: { value: _vm.csrf }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "xl:flex" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.datos_url.url_original,
+                        expression: "datos_url.url_original"
+                      }
+                    ],
+                    staticClass:
+                      "w-full xl:w-auto xl:flex-1 px-3 py-2 xl:mr-3 rounded-md border-2 border-gray-400 focus:border-blue-500 outline-none",
+                    attrs: {
+                      type: "text",
+                      name: "url",
+                      id: "url",
+                      placeholder: "Ingrese la URL a acortar"
+                    },
+                    domProps: { value: _vm.datos_url.url_original },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.datos_url,
+                          "url_original",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass:
+                      "w-full xl:w-auto px-3 py-5 xl:py-2 mt-4 xl:mt-0 rounded-md transition-all duration-200 bg-blue-900 hover:bg-blue-1000 cursor-pointer text-white text-lg",
+                    attrs: { type: "submit", value: "Acortar" }
+                  })
+                ])
+              ]
+            )
           ])
         ]
       )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
