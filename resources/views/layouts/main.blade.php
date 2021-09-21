@@ -4,7 +4,7 @@
     @include('include.head')
   </head>
   <body class="antialiased">
-    <div id="app" class="h-screen bg-gradient-to-b from-purple-600 to-purple-900">
+    <div id="app" class="h-screen bg-gradient-to-b from-blue-1100 to-blue-900">
       <vue-navbar></vue-navbar>
       @yield('contenido-principal')
     </div>
