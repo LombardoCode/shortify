@@ -23,6 +23,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('vue-navbar', require('./components/html_elementos/VueNavbar.vue').default);
 Vue.component('shortener', require('./components/Shortener.vue').default);
+Vue.component('acerca', require('./components/Acerca.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

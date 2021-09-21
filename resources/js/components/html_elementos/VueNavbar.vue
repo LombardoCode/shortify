@@ -10,7 +10,7 @@
         </div>
         <ul class="lg:block select-none" :class="nav.mostrar ? 'block' : 'hidden'">
           <li>
-            <a href="/acerca-de" class="inline-block w-full lg:w-auto px-5 py-3 text-center lg:text-left transition-all duration-200 hover:bg-white hover:text-black rounded-none lg:rounded-full text-white font-bold">
+            <a href="/acerca" class="inline-block w-full lg:w-auto px-5 py-3 text-center lg:text-left transition-all duration-200 hover:bg-white hover:text-black rounded-none lg:rounded-full text-white font-bold">
               Acerca de
             </a>
           </li>

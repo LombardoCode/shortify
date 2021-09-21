@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('inicio');
+  return view('inicio');
+});
+
+Route::get('/acerca', function() {
+  return view('acerca');
 });
 
 Route::get('/{codigo_url}', [UrlController::class, 'redirect']);
