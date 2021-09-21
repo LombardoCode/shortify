@@ -64,7 +64,7 @@ class UrlController extends Controller
         if ($url_nueva->save()) {
           return response()->json([
             'success' => true,
-            'url_corta' => $url_nueva
+            'url_corta' => $url_nueva['url_corta']
           ]);
         }
       }
