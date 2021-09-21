@@ -42,7 +42,7 @@ export default {
 
         if (res.data.success) {
           this.datos_url.url_corta = res.data.url_corta;
-          this.datos_url.url_corta_completa = window.location.href + '/' + res.data.url_corta;
+          this.datos_url.url_corta_completa = window.location.href + res.data.url_corta;
         }
       })
       .catch(err => {

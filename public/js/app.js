@@ -12161,7 +12161,7 @@ __webpack_require__.r(__webpack_exports__);
 
         if (res.data.success) {
           _this.datos_url.url_corta = res.data.url_corta;
-          _this.datos_url.url_corta_completa = window.location.href + '/' + res.data.url_corta;
+          _this.datos_url.url_corta_completa = window.location.href + res.data.url_corta;
         }
       })["catch"](function (err) {
         console.log(err);

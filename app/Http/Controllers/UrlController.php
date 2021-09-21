@@ -86,4 +86,19 @@ class UrlController extends Controller
 
     return $codigo_generado;
   }
+
+  public function redirect($codigo_url) {
+    // Buscamos si el código existe en la base de datos
+    $url = Url::where('url_corta', $codigo_url)->get();
+
+    // En caso de existir...
+    if (count($url) > 0) {
+      // Redireccionamos al usuario al URL en cuestión
+      return redirect($url[0]['url_original']);
+    } else { // De no existir...
+      // Redirigimos al usuario a la página principal
+      $url_host = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}/";
+      return redirect($url_host);
+    }
+  }
 }

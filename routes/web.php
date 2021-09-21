@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+Route::get('/{codigo_url}', [UrlController::class, 'redirect']);
+
 // API
 Route::prefix('api')->group(function() {
   Route::prefix('url')->group(function() {
