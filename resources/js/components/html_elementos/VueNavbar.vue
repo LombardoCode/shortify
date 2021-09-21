@@ -5,7 +5,7 @@
         <div class="flex-1 flex justify-between items-center">
           <a href="/" class="py-2 text-2xl text-white select-none">shortify</a>
           <div class="lg:hidden px-4 py-2 border-2 border-white rounded-md transition-all duration-200 hover:bg-white cursor-pointer text-white hover:text-black" @click="toggleNav()">
-            <font-awesome-icon :icon="['fa', 'bars']" />
+            <i class="fas fa-bars"></i>
           </div>
         </div>
         <ul class="lg:block select-none" :class="nav.mostrar ? 'block' : 'hidden'">
@@ -21,14 +21,7 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-library.add(faBars)
-
 export default {
-  mounted() {
-
-  },
   data() {
     return {
       nav: {

@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss');
-// require('laravel-mix-bundle-analyzer');  if (!mix.inProduction()) { mix.bundleAnalyzer(); }
+// require('laravel-mix-bundle-analyzer'); if (!mix.inProduction()) { mix.bundleAnalyzer(); }
 
 /*
  |--------------------------------------------------------------------------

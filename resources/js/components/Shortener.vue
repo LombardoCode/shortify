@@ -6,7 +6,7 @@
         <div class="text-center">
           <div v-for="(error, index) in errores.datos" :key="index">
             <p v-for="(llave, index2) in error" :key="index2">
-              <font-awesome-icon :icon="['far', 'times-circle']" />
+              <i class="far fa-times-circle"></i>
               {{ llave }}
             </p>
           </div>
@@ -33,10 +33,6 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
-library.add(faTimesCircle);
-
 export default {
   data() {
     return {
