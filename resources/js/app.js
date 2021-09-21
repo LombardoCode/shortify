@@ -18,8 +18,10 @@ window.Vue = require('vue').default;
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('vue-navbar', require('./components/html_elementos/VueNavbar.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
