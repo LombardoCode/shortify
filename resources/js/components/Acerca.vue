@@ -4,11 +4,11 @@
     <p class="text-center text-4xl md:text-5xl mb-4">Lombardo Moreno Rodríguez</p>
     <p class="text-center text-xl md:text-2xl mb-10">2021</p>
     <div class="flex flex-col md:flex-row justify-center">
-      <a href="https://www.linkedin.com/in/lombardo-moreno-rodr%C3%ADguez-bba399218/" class="text-2xl border-2 border-white px-3 py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 md:mr-5">
+      <a href="https://www.linkedin.com/in/lombardo-moreno-rodr%C3%ADguez-bba399218/" class="text-2xl border-2 border-white px-3 py-6 md:py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 md:mr-5 text-center">
         <font-awesome-icon :icon="['fab', 'linkedin']" />
         Linked in
       </a>
-      <a href="https://github.com/LombardoCode/shortify" class="text-2xl border-2 border-white px-3 py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0">
+      <a href="https://github.com/LombardoCode/shortify" class="text-2xl border-2 border-white px-3 py-6 md:py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 text-center">
         <font-awesome-icon :icon="['fab', 'github']" />
         Github
       </a>

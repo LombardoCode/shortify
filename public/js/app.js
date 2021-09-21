@@ -52897,7 +52897,7 @@ var render = function() {
           "a",
           {
             staticClass:
-              "text-2xl border-2 border-white px-3 py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 md:mr-5",
+              "text-2xl border-2 border-white px-3 py-6 md:py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 md:mr-5 text-center",
             attrs: {
               href:
                 "https://www.linkedin.com/in/lombardo-moreno-rodr%C3%ADguez-bba399218/"
@@ -52914,7 +52914,7 @@ var render = function() {
           "a",
           {
             staticClass:
-              "text-2xl border-2 border-white px-3 py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0",
+              "text-2xl border-2 border-white px-3 py-6 md:py-2 rounded-md transition-all duration-200 hover:bg-white hover:text-black mb-5 md:mb-0 text-center",
             attrs: { href: "https://github.com/LombardoCode/shortify" }
           },
           [
@@ -53025,7 +53025,7 @@ var render = function() {
             _vm._v("Ingrese el URL a acortar")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "px-4 pt-2 pb-4" }, [
+          _c("div", { staticClass: "px-4 pt-2 pb-1 xl:pb-3" }, [
             _c(
               "form",
               {

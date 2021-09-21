@@ -18,7 +18,7 @@
       </div>
       <div class="bg-white px-3 py-4 rounded-md overflow-hidden">
         <p class="text-center text-xl font-bold py-2">Ingrese el URL a acortar</p>
-        <div class="px-4 pt-2 pb-4">
+        <div class="px-4 pt-2 pb-1 xl:pb-3">
           <form @submit.prevent="crearURL()">
             <input type="hidden" name="_token" :value="csrf">
             <div class="xl:flex">
