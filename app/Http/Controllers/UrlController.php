@@ -26,7 +26,10 @@ class UrlController extends Controller
 		// Si la validación falla...
 		if ($validaciones->fails()) {
 			// Retornamos los errores
-			return redirect()->back()->withErrors($validaciones)->withInput();
+      return response()->json([
+        'success' => false,
+        'errores' => $validaciones->errors()
+      ]);
 		} else {
       // Verificamos si la url original ya existe en la base de datos
       $existe_url = Url::where('url_original', $request['url_original'])->get();

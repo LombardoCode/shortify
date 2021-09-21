@@ -2,6 +2,16 @@
   <div class="container mx-auto px-3 mt-4">
 
     <div class="fnt-quicksand w-full lg:w-3/4 mx-auto">
+      <div v-if="errores.mostrar" class="bg-red-600 text-white px-4 py-3 mb-2 rounded-md overflow-hidden">
+        <div class="text-center">
+          <div v-for="(error, index) in errores.datos" :key="index">
+            <p v-for="(llave, index2) in error" :key="index2">
+              <font-awesome-icon :icon="['far', 'times-circle']" />
+              {{ llave }}
+            </p>
+          </div>
+        </div>
+      </div>
       <div v-if="datos_url.url_corta" class="bg-green-600 text-white px-4 py-3 mb-2 rounded-md overflow-hidden">
         <p class="text-center">¡El URL ha sido generado!</p>
         <a v-if="datos_url.url_corta_completa" :href="datos_url.url_corta_completa" class="block text-center text-xl mt-3 underline">{{ datos_url.url_corta_completa }}</a>
@@ -23,6 +33,10 @@
 </template>
 
 <script>
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
+library.add(faTimesCircle);
+
 export default {
   data() {
     return {
@@ -31,6 +45,10 @@ export default {
         url_original: '',
         url_corta: '',
         url_corta_completa: ''
+      },
+      errores: {
+        mostrar: false,
+        datos: []
       }
     }
   },
@@ -41,8 +59,23 @@ export default {
         console.log(res.data);
 
         if (res.data.success) {
+          // Eliminamos los errores
+          this.errores.mostrar = false;
+          this.errores.datos = [];
+
+          // Guardamos las URLs
           this.datos_url.url_corta = res.data.url_corta;
           this.datos_url.url_corta_completa = window.location.href + res.data.url_corta;
+        } else {
+          if (!res.data.success) {
+            // Guardamos y mostramos los errores
+            this.errores.mostrar = true;
+            this.errores.datos = res.data.errores;
+
+            // Eliminamos las URLs generadas
+            this.datos_url.url_corta = '';
+            this.datos_url.url_corta_completa = '';
+          }
         }
       })
       .catch(err => {
