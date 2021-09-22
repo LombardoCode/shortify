@@ -8,6 +8,8 @@ Puede acceder a una demostración del proyecto haciendo clic [aquí](http://shor
 ## Acerca del proyecto
 El proyecto se trata sobre un acortador de URLs, esto con la finalidad de hacer las URLs largas sean más amigables y compartibles.
 
+<a href="http://shortify.atwebpages.com/" title="shortify" style="display: block; display: flex; justify-content: center;"><img src="https://raw.githubusercontent.com/LombardoCode/shortify/bf4745bfdfc9928afbfb7707abeb6c588ade7978/README/images/logo.svg" width="300"></a>
+
 ## Lenguajes, frameworks/librerías usadas para este proyecto
 - HTML
 - CSS

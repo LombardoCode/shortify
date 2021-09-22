@@ -8,6 +8,8 @@ You can access to a demonstration of the project by clicking [here](http://short
 ## About this project
 The project it's about a URL shortener, with the purpose of making long URLs friendly and sharable.
 
+<a href="http://shortify.atwebpages.com/" title="shortify" style="display: block; display: flex; justify-content: center;"><img src="https://raw.githubusercontent.com/LombardoCode/shortify/bf4745bfdfc9928afbfb7707abeb6c588ade7978/README/images/logo.svg" width="300"></a>
+
 ## Languages, frameworks/libraries used for this project
 - HTML
 - CSS
